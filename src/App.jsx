@@ -9,7 +9,10 @@ const App = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
+    if(title === '' || description === ''){
+      alert('Please fill all the fields');
+      return;
+    }
     const copytask = [...notes];
     copytask.push({title,description});
     setNotes(copytask);    
